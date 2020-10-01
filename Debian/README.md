@@ -1,3 +1,3 @@
 # Debian
 
-This folder is for things related to the debian distribution of Linux.  
+This folder is for things related to the Debian distribution of Linux.  
