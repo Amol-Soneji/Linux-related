@@ -7,11 +7,11 @@ sudo apt-get upgrade;
 #Ask the user if they would like to autoremove any automatically installed packaged that is no longer needed as it is no longer a dependency to another package.  
 echo "Enter Y or y, if you would like to automatically remove packasges that were automatically installed previously as dependencies, but are no longer needed.  ";
 read remInput;
-if [["$remInput" = "Y"]] || [["$remInput" = "y"]]; then
+if [[ "$remInput" = "Y" ]] || [[ "$remInput" = "y" ]]; then
   #Ask the user if they would like to purge the config contents of the package(s) that is being removed.  
   echo "Enter Y or y, if you would like to purge the config contents of the package(s) that are being removed.  ";
   read purInput;
-  if [["$purInput" = "Y"]] || [["$purInput" = "y"]]; then
+  if [[ "$purInput" = "Y" ]] || [[ "$purInput" = "y" ]]; then
     #Remove packages that were automatically installed as an dependency to another package, however after the upgrade the dependency(ies) no longer exsists.  Purge the configuration files of these packages that are being removed.  
     #Yes or No prompt will still show for safety.  
     sudo apt-get autoremove --purge;
