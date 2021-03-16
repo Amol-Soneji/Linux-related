@@ -13,5 +13,5 @@ while [ 1 -eq 1 ]; do
   fi
   echo "$file_line" >> "$file_name";
 done
-echo "File successfully created wiht the following content.  ";
+echo "File successfully created with the following content.  ";
 cat "$file_name";
