@@ -2,6 +2,12 @@
 sudo apt-get check;
 #Check if there is any updates to package versions in the repos that are set in the system.  
 sudo apt-get update;
+#To be used for instalation of packages that have been held back.  
+touch parseUpgradeCommand;
+touch heldPackages;
+sudo apt-get upgrade -s >> parseUpgradeCommand;
+#Line 5 is where the held back packages line would start.  
+sed '5, /^"The following packages will be upgraded"/' parseUpgradeCommand > heldPackages;
 #Start the update process of packages that have a new version available.  This does not ingnore the prompt yes or no prompt.
 sudo apt-get upgrade;
 #Ask the user if they would like to autoremove any automatically installed packaged that is no longer needed as it is no longer a dependency to another package.  
