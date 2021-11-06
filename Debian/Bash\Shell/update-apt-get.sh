@@ -28,5 +28,7 @@ if [[ "$remInput" = "Y" ]] || [[ "$remInput" = "y" ]]; then
 fi
 #Clean up any downloaded temporary installation deb/files during the updating process, rather than waiting till the next system restart or when the system automatically removes these files from time to time.  
 sudo apt-get clean;
+#Remove any files that were created by this Bash/Shell script, for the script to run.  
+rm heldPackages parseUpgradeCommand;
 #Tell user that the update process is completed.  
 echo "Update process complete.  ";
