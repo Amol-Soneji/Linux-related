@@ -8,7 +8,7 @@ touch heldPackages;
 sudo apt-get upgrade -s >> parseUpgradeCommand;
 #Line 5 is where the held back packages line would start.  
 sed '5, /^"The following packages will be upgraded"/q42' parseUpgradeCommand > heldPackages;
-#Start the update process of packages that have a new version available.  This does not ingnore the prompt yes or no prompt.
+#Start the update process of packages that have a new version available.  This does not ignore the prompt yes or no prompt.
 sudo apt-get upgrade;
 #Ask the user if they would like to autoremove any automatically installed packaged that is no longer needed as it is no longer a dependency to another package.  
 echo "Enter Y or y, if you would like to automatically remove packasges that were automatically installed previously as dependencies, but are no longer needed.  ";
